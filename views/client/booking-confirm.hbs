@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Booking Page</title>
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,700,900|Display+Playfair:200,300,400,700"
+		/>
+		<link rel="stylesheet" href="fonts/icomoon/style.css" />
+		<script src="https://cdn.tailwindcss.com"></script>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/magnific-popup.css" />
+		<link rel="stylesheet" href="css/jquery-ui.css" />
+		<link rel="stylesheet" href="css/owl.carousel.min.css" />
+		<link rel="stylesheet" href="css/owl.theme.default.min.css" />
+
+		<link rel="stylesheet" href="css/bootstrap-datepicker.css" />
+
+		<link rel="stylesheet" href="fonts/flaticon/font/flaticon.css" />
+
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.ne/npm/mediaelement@4.2.7/build/mediaelementplayer.min.css"
+		/>
+
+		<link rel="stylesheet" href="css/aos.css" />
+
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body class="bg-white">
+		<div class="site-mobile-menu">
+			<div class="site-mobile-menu-header">
+				<div class="site-mobile-menu-close mt-3">
+					<span class="icon-close2 js-menu-toggle"></span>
+				</div>
+			</div>
+			<div class="site-mobile-menu-body"></div>
+		</div>
+		<header class="site-navbar py-1" role="banner">
+			<div class="container-fluid">
+				<div class="row align-items-center">
+					<div class="col-6 col-xl-2" data-aos="fade-down"></div>
+					<div class="col-10 col-md-8 d-none d-xl-block" data-aos="fade-down">
+						<nav
+							class="site-navigation position-relative text-right text-lg-center"
+							role="navigation"
+						>
+							<ul
+								class="site-menu italic js-clone-nav mx-auto d-none d-lg-block"
+							>
+								<li><a href="index.html">Home</a></li>
+								<li><a href="/index.html#services">Services</a></li>
+								<li><a href="/index.html#about">About</a></li>
+
+								<li><a href="/index.html#portfolio">Provider Portfolio</a></li>
+								<li><a href="/index.html#contact">Contact</a></li>
+								<li>
+									<div class="flex items-center gap-2">
+										<a href="login.html" class="hover:text-[#EBBA4D]">Log In</a>
+										<a href="account.hbs">
+											<svg
+												xmlns="http://www.w3.org/2000/svg"
+												viewBox="0 0 24 24"
+												fill="currentColor"
+												class="w-6 h-6 hover:text-[#EBBA4D]"
+											>
+												<path
+													fill-rule="evenodd"
+													d="M18.685 19.097A9.723 9.723 0 0021.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 003.065 7.097A9.716 9.716 0 0012 21.75a9.716 9.716 0 006.685-2.653zm-12.54-1.285A7.486 7.486 0 0112 15a7.486 7.486 0 015.855 2.812A8.224 8.224 0 0112 20.25a8.224 8.224 0 01-5.855-2.438zM15.75 9a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"
+													clip-rule="evenodd"
+												/>
+											</svg>
+										</a>
+									</div>
+								</li>
+							</ul>
+						</nav>
+					</div>
+
+					<div class="col-6 col-xl-2 text-right" data-aos="fade-down">
+						<div
+							class="d-inline-block d-xl-none ml-md-0 mr-auto py-3"
+							style="position: relative; top: 3px"
+						>
+							<a href="#" class="site-menu-toggle js-menu-toggle text-black"
+								><span class="icon-menu h3"></span
+							></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<div class="container mx-auto mt-10 p-5">
+			<div class="text-4xl italic w-full text-center font-[400] mb-4">
+				Thank you, Ahmad Ishfaq Abdullah
+			</div>
+			<div class="text-xl italic w-full text-center font-[400] mb-4">
+				You'll revieve a confirmation email soon
+			</div>
+			<div class="text-xl italic w-full text-center font-[400] mb-4">
+				Order number: 10007
+			</div>
+			<div class="flex flex-col justify-between border border-black p-5">
+				<!-- Left column for the cart -->
+				<div class="w-full md:order-none p-4">
+					<h2 class="text-lg font-semibold italic">My cart</h2>
+					<hr />
+					<div class="flex items-start justify-between mt-4 border-b pb-4">
+						<div class="flex w-full justify-between flex-col md:flex-row">
+							<div class="flex gap-4 flex-col md:flex-row">
+								<img
+									src="/images/facial.webp"
+									alt="Facial"
+									class="w-[100px] h-[100px]"
+								/>
+								<div>
+									<p class="italic font-medium">Facial</p>
+									<p class="italic text-sm text-gray-600">Pay in person</p>
+									<p class="italic text-sm text-gray-600">
+										November 21, 2023 at 10:00 AM
+									</p>
+									<p class="italic text-sm text-gray-600">1 hr</p>
+									<p class="italic text-sm text-gray-600">Ella</p>
+								</div>
+							</div>
+							<div class="flex mr-2">
+								<p class="font-semibold italic">$99.00</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Right column for the order summary -->
+				<div class="align-self-end p-4 w-[40%]">
+					<div
+						class="italic flex text-xs md:text-sm items-center justify-between mt-2"
+					>
+						<p>Subtotal</p>
+						<p>$99.00</p>
+					</div>
+					<div
+						class="italic flex text-xs md:text-sm items-center justify-between mt-2"
+					>
+						<p>Sales Tax</p>
+						<p>$0.00</p>
+					</div>
+					<hr />
+
+					<div
+						class="italic flex items-center justify-between mt-2 text-sm md:text-[20px]"
+					>
+						<p>Total</p>
+						<p>$99.00</p>
+					</div>
+					<!-- Checkout button -->
+				</div>
+			</div>
+
+			<!-- Next Button -->
+		</div>
+		<script src="js/jquery-3.3.1.min.js"></script>
+		<script src="js/jquery-migrate-3.0.1.min.js"></script>
+		<script src="js/jquery-ui.js"></script>
+		<script src="js/popper.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/owl.carousel.min.js"></script>
+		<script src="js/jquery.stellar.min.js"></script>
+		<script src="js/jquery.countdown.min.js"></script>
+		<script src="js/jquery.magnific-popup.min.js"></script>
+		<script src="js/bootstrap-datepicker.min.js"></script>
+		<script src="js/aos.js"></script>
+
+		<script src="js/main.js"></script>
+	</body>
+</html>

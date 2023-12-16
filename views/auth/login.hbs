@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+<body class="flex items-center justify-center h-screen">
+<div class="bg-white p-8 w-96">
+  <h2 class="text-4xl font-bold mb-2 text-gray-800 text-center text-uppercase">
+    Log In</h2>
+  <div class="text-center text-sm mb-4">
+    <span class="text-gray-600 italic font-light">New to this site?</span>
+    <a href="/auth/signup" class="text-[#EBBA4D] italic">Sign Up</a>
+  </div>
+  <form form method='POST' action='/auth/login'>
+    <div>
+      <label
+        for="email"
+        class="block mb-2 font-medium text-gray-600 italic font-thin text-xs"
+      >Email</label
+      >
+      <input
+        type="email"
+        id="email"
+        name="email"
+        class="italic text-xs block w-full p-2 border-b border-gray-300 focus:border-b-[#EBBA4D] focus:outline-none pl-0"
+      />
+    </div>
+    <div>
+      <label
+        for="email"
+        class="block mb-2 font-medium text-gray-600 italic font-thin text-xs"
+      >Password</label
+      >
+      <input
+        type="password"
+        id="password"
+        name="password"
+        class="italic text-xs block w-full p-2 border-b border-gray-300 focus:border-b-[#EBBA4D] focus:outline-none pl-0"
+      />
+    </div>
+
+    <input type="hidden" name="userType" value="client">
+
+    <button
+      type="submit"
+      class="block w-full py-2 px-4 bg-[#EBBA4D] hover:bg-[#EBBA4D]/[.8] transition-all text-white font-semibold"
+    >
+      Log In
+    </button>
+  </form>
+</div>
+</body>
+</html>

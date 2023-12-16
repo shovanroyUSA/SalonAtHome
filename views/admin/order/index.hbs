@@ -1,0 +1,95 @@
+{{#>admin}}
+   <div
+      id="main-content"
+      class="h-full p-10 w-full bg-gray-50 relative overflow-y-auto lg:ml-64"
+    >
+      <div class="flex justify-between">
+        <span class="text-xl font-semibold">Orders</span>
+      </div>
+      <div class="w-full overflow-x-auto">
+        <table class="w-full">
+          <thead>
+          <tr
+            class="text-md font-semibold tracking-wide text-left text-gray-900 bg-gray-100 uppercase border-b border-gray-600"
+          >
+            <th class="px-4 py-3">Id</th>
+            <th class="px-4 py-3">Name</th>
+            <th class="px-4 py-3">Email</th>
+            <th class="px-4 py-3">Service</th>
+            <th class="px-4 py-3">Staff</th>
+            <th class="px-4 py-3">Date</th>
+            <th class="px-4 py-3">Time</th>
+            <th class="px-4 py-3">Notes</th>
+            <th class="px-4 py-3">Status</th>
+            <th class="px-4 py-3">Amount</th>
+            <th class="px-4 py-3">Action</th>
+          </tr>
+          </thead>
+          <tbody class="bg-white">
+          {{#each viewData.orders}}
+            <tr class="text-gray-700">
+              <td class="px-4 py-3 text-ms font-semibold border">{{orderID}}</td>
+              <td class="px-4 py-3 text-ms font-semibold border">{{client.firstName}} {{client.lastName}}</td>
+              <td class="px-4 py-3 text-ms font-semibold border">{{client.email}}</td>
+              <td class="px-4 py-3 text-ms font-semibold border">{{service.serviceName}}</td>
+              <td class="px-4 py-3 text-ms font-semibold border">{{staffMember.firstName}}</td>
+              <td class="px-4 py-3 text-ms font-semibold border">{{date}}</td>
+              <td class="px-4 py-3 text-ms font-semibold border">{{time}}</td>
+              <td class="px-4 py-3 text-ms font-semibold border">{{notes}}</td>
+              <td class="px-4 py-3 text-ms font-semibold border">{{status}}</td>
+              <td class="px-4 py-3 text-ms border">
+                <p class="font-semibold text-black">{{service.price}}</p>
+              <td class="px-4 py-3 text-sm border">
+                <form method="POST" action="/admin/order/{{orderID}}/update-status">
+                  <input type="hidden" name="status" value="confirmed">
+                  <button
+                    type="submit"
+                    class="mr-3 text-sm bg-green-500 hover:bg-green-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline"
+                  >
+                    Confirm
+                  </button>
+                </form>
+              </td>
+
+              <td class="px-4 py-3 text-sm border">
+                <form method="POST" action="/admin/order/{{orderID}}/update-status">
+                  <input type="hidden" name="status" value="cancelled">
+                  <button
+                    type="submit"
+                    class="mr-3 text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline"
+                  >
+                    Cancel
+                  </button>
+                </form>
+              </td>
+
+              <td class="px-4 py-3 text-sm border">
+                <form method="POST" action="/admin/order/{{orderID}}/update-status">
+                  <input type="hidden" name="status" value="completed">
+                  <button
+                    type="submit"
+                    class="mr-3 text-sm bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline"
+                  >
+                    Complete
+                  </button>
+                </form>
+              </td>
+
+              <td>
+                <form action="/admin/order/{{orderID}}" method="POST">
+                  <button
+                    type="submit"
+                    class="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline"
+                  >
+                    Delete
+                  </button>
+                </form>
+              </td>
+            </tr>
+          {{/each}}
+          </tbody>
+        </table>
+      </div>
+    </div>
+{{/admin}}
+

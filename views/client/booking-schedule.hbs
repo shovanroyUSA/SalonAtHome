@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Booking Page</title>
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,700,900|Display+Playfair:200,300,400,700"
+		/>
+		<link rel="stylesheet" href="fonts/icomoon/style.css" />
+		<script src="https://cdn.tailwindcss.com"></script>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/magnific-popup.css" />
+		<link rel="stylesheet" href="css/jquery-ui.css" />
+		<link rel="stylesheet" href="css/owl.carousel.min.css" />
+		<link rel="stylesheet" href="css/owl.theme.default.min.css" />
+
+		<link rel="stylesheet" href="css/bootstrap-datepicker.css" />
+
+		<link rel="stylesheet" href="fonts/flaticon/font/flaticon.css" />
+
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.ne/npm/mediaelement@4.2.7/build/mediaelementplayer.min.css"
+		/>
+
+		<link rel="stylesheet" href="css/aos.css" />
+
+		<link rel="stylesheet" href="css/style.css" />
+		<style>
+			#calendar {
+				width: 90%; /* Takes 90% of the container width */
+				height: 60vh; /* Takes 60% of the viewport height */
+			}
+		</style>
+	</head>
+	<body class="bg-white">
+		<div class="site-mobile-menu">
+			<div class="site-mobile-menu-header">
+				<div class="site-mobile-menu-close mt-3">
+					<span class="icon-close2 js-menu-toggle"></span>
+				</div>
+			</div>
+			<div class="site-mobile-menu-body"></div>
+		</div>
+		<header class="site-navbar py-1" role="banner">
+			<div class="container-fluid">
+				<div class="row align-items-center">
+					<div class="col-6 col-xl-2" data-aos="fade-down"></div>
+					<div class="col-10 col-md-8 d-none d-xl-block" data-aos="fade-down">
+						<nav
+							class="site-navigation position-relative text-right text-lg-center"
+							role="navigation"
+						>
+							<ul
+								class="site-menu italic js-clone-nav mx-auto d-none d-lg-block"
+							>
+								<li><a href="index.hbs">Home</a></li>
+								<li><a href="/index.html#services">Services</a></li>
+								<li><a href="/index.html#about">About</a></li>
+
+								<li><a href="/index.html#portfolio">Provider Portfolio</a></li>
+								<li><a href="/index.html#contact">Contact</a></li>
+							</ul>
+						</nav>
+					</div>
+
+					<div class="col-6 col-xl-2 text-right" data-aos="fade-down">
+						<div
+							class="d-inline-block d-xl-none ml-md-0 mr-auto py-3"
+							style="position: relative; top: 3px"
+						>
+							<a href="#" class="site-menu-toggle js-menu-toggle text-black"
+								><span class="icon-menu h3"></span
+							></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<div class="container mx-auto p-5">
+      <form method="POST" action="/booking/confirm">
+        <div class="text-center">
+          <span class="text-transform: uppercase text-4xl font-bold mb-4">{{viewData.service.serviceName}}</span>
+          <p
+            class="mb-4 block mb-2 font-medium text-gray-600 italic font-thin text-sm"
+          >
+            Check out our availability and book the date and time that works for
+            you
+          </p>
+  <!--				<div-->
+  <!--					class="border-t border-b py-4 block mb-2 font-medium text-gray-600 italic font-thin text-sm flex justify-center gap-2 items-center"-->
+  <!--				>-->
+  <!--					<span class="text-gray-600">Filter by:</span>-->
+  <!--					<div class="w-[150px]">-->
+  <!--						<select class="w-full bg-white focus:outline-none">-->
+  <!--							<option>All</option>-->
+
+  <!--							<option>Ella</option>-->
+  <!--							<option>Helen</option>-->
+  <!--							<option>Jennifer</option>-->
+  <!--							<option>Ken</option>-->
+  <!--							<option>Kartik</option>-->
+  <!--							<option>Sumi</option>-->
+  <!--							&lt;!&ndash; ... options ... &ndash;&gt;-->
+  <!--						</select>-->
+  <!--					</div>-->
+  <!--				</div>-->
+        </div>
+
+        <div
+				class="flex flex-col lg:flex-row justify-between mt-6 l mx-auto gap-3"
+			>
+				<!-- Calendar and Time Selection -->
+				<div class="w-full flex items-center flex-col lg:flex-row">
+					<div
+						class="flex flex-col items-center sm:items-start md:flex-row gap-2 w-full">
+						<div class="flex flex-col gap-1 w-full md:w-1/2">
+							<span class="text-xl font-bold mb-4 mx-auto"
+								>SELECT A DATE AND TIME</span>
+							<div id="calendar" class="w-full max-w-xl mx-auto h-96"></div>
+						</div>
+
+						<div class="md:w-1/2 w-full">
+							<div class="grid grid-cols-2 gap-2 mb-4 lg:mt-5">
+								<button
+									class="border-gray-400 text-gray-500 border w-full px-3 py-1.5 italic focus:outline-none focus:bg-yellow-100/[.6] text-xs lg:text-sm"
+								>
+									10:00 am
+								</button>
+								<button
+									class="border-gray-400 text-gray-500 border w-full px-3 py-1.5 italic focus:outline-none focus:bg-yellow-100/[.6] text-xs lg:text-sm"
+								>
+									10:30 am
+								</button>
+								<button
+									class="border-gray-400 text-gray-500 border w-full px-3 py-1.5 italic focus:outline-none focus:bg-yellow-100/[.6] text-xs lg:text-sm"
+								>
+									11:00 am
+								</button>
+								<button
+									class="border-gray-400 text-gray-500 border w-full px-3 py-1.5 italic focus:outline-none focus:bg-yellow-100/[.6] text-xs lg:text-sm"
+								>
+									11:30 am
+								</button>
+								<button
+									class="border-gray-400 text-gray-500 border w-full px-3 py-1.5 italic focus:outline-none focus:bg-yellow-100/[.6] text-xs lg:text-sm"
+								>
+									12:00 am
+								</button>
+								<button
+									class="border-gray-400 text-gray-500 border w-full px-3 py-1.5 italic focus:outline-none focus:bg-yellow-100/[.6] text-xs lg:text-sm"
+								>
+									12:30 am
+								</button>
+								<button
+									class="border-gray-400 text-gray-500 border w-full px-3 py-1.5 italic focus:outline-none focus:bg-yellow-100/[.6] text-xs lg:text-sm"
+								>
+									1:00 pm
+								</button>
+								<button
+									class="border-gray-400 text-gray-500 border w-full px-3 py-1.5 italic focus:outline-none focus:bg-yellow-100/[.6] text-xs lg:text-sm"
+								>
+									1:30 pm
+								</button>
+								<button
+									class="border-gray-400 text-gray-500 border w-full px-3 py-1.5 italic focus:outline-none focus:bg-yellow-100/[.6] text-xs lg:text-sm"
+								>
+									2:00 pm
+								</button>
+								<button
+									class="border-gray-400 text-gray-500 border w-full px-3 py-1.5 italic focus:outline-none focus:bg-yellow-100/[.6] text-xs lg:text-sm"
+								>
+									2:30 pm
+								</button>
+								<button
+									class="border-gray-400 text-gray-500 border w-full px-3 py-1.5 italic focus:outline-none focus:bg-yellow-100/[.6] text-xs lg:text-sm"
+								>
+									3:00 pm
+								</button>
+								<button
+									class="border-gray-400 text-gray-500 border w-full px-3 py-1.5 italic focus:outline-none focus:bg-yellow-100/[.6] text-xs lg:text-sm"
+								>
+									3:30 pm
+								</button>
+								<button
+									class="border-gray-400 text-gray-500 border w-full px-3 py-1.5 italic focus:outline-none focus:bg-yellow-100/[.6] text-xs lg:text-sm"
+								>
+									4:00 pm</button
+								><button
+									class="border-gray-400 text-gray-500 border w-full px-3 py-1.5 italic focus:outline-none focus:bg-yellow-100/[.6] text-xs lg:text-sm"
+								>
+									4:30 pm</button
+								><button
+									class="border-gray-400 text-gray-500 border w-full px-3 py-1.5 italic focus:outline-none focus:bg-yellow-100/[.6] text-xs lg:text-sm"
+								>
+									5:00 pm
+								</button>
+								<!-- ... more buttons ... -->
+							</div>
+							<div class="">
+								<h3
+									class="font-medium text-gray-600 italic font-thin text-sm mb-3"
+								>
+									Service Details
+								</h3>
+								<!-- Details would go here -->
+								<div
+									class="block mb-2 font-medium text-gray-600 italic font-thin text-sm">
+									<p>{{viewData.service.serviceName}}</p>
+									<p>{{viewData.service.serviceDescription}}</p>
+									<p>{{viewData.service.serviceHour}} hr</p>
+									<p>${{viewData.service.price}}</p>
+									<hr class="mt-2" />
+								</div>
+
+								<!-- Preferences -->
+								<div class="mt-4">
+									<h3
+										class="block mb-2 font-medium text-gray-600 italic font-thin text-sm">
+										Preferences
+									</h3>
+
+                  <select class="w-full bg-white border border-gray-300 p-2">
+                    <option>Select Staff Member</option>
+                    {{#each viewData.staffs}}
+                      <option>{{firstName}}</option>
+                    {{/each}}
+                  </select>
+
+                  <div class="text-center mt-6 align-self-start w-full">
+                    <a href="/booking/confirm">
+                      <button type="submit" class="bg-[#EBBA4D] text-black font-bold py-2 px-6 w-full">
+                        NEXT
+                      </button>
+                    </a>
+                  </div>
+                </div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Service Details -->
+			</div>
+      </form>
+			<!-- Next Button -->
+		</div>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/6.1.9/index.min.js"
+			integrity="sha512-xCMh+IX6X2jqIgak2DBvsP6DNPne/t52lMbAUJSjr3+trFn14zlaryZlBcXbHKw8SbrpS0n3zlqSVmZPITRDSQ=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/6.1.9/index.global.js"
+			integrity="sha512-lU5sd0e7f59Jia30P5oEI5zC3BzVJ4ao+xRA70IIJ2UBzek4PCkPk+MTLIYwXTXGErOqjJ/rLdB3gLK0E5hD0w=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/6.1.9/index.global.min.js"
+			integrity="sha512-XcSx5820pzZbdZYdvoBBKzuOivQv7oQMd+7JuUHh0jhMwqsWHOf+yRfZRxCtV0ySEKWtKblijTdl9pvODcmD7A=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/6.1.9/index.js"
+			integrity="sha512-bBl4oHIOeYj6jgOLtaYQO99mCTSIb1HD0ImeXHZKqxDNC7UPWTywN2OQRp+uGi0kLurzgaA3fm4PX6e2Lnz9jQ=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+		<script>
+			document.addEventListener("DOMContentLoaded", function () {
+				var calendarEl = document.getElementById("calendar");
+				var calendarEl = document.getElementById("calendar");
+				var selectedDateEl = null;
+
+				var calendar = new FullCalendar.Calendar(calendarEl, {
+					initialView: "dayGridMonth",
+					headerToolbar: {
+						left: "prev,next today",
+						center: "title",
+						right: "",
+					},
+					dateClick: function (info) {
+						var day = info.date.getDay();
+						// alert("Clicked on: " + info.dateStr);
+						// Check if the clicked date is a business day (Tuesday to Saturday)
+						if (day >= 2 && day <= 6) {
+							// Remove the background from the previously selected date element
+							if (selectedDateEl) {
+								selectedDateEl.classList.remove("bg-yellow-200");
+							}
+							// Add the yellow background to the newly selected date element
+							info.dayEl.classList.add("bg-yellow-200");
+							// Keep track of the selected date element
+							selectedDateEl = info.dayEl;
+						}
+					},
+					dayCellDidMount: function (info) {
+						var day = info.date.getDay();
+						// Disable non-business days (Sunday and Monday)
+						if (day === 0 || day === 1) {
+							info.el.classList.add("opacity-50", "pointer-events-none");
+						}
+					},
+					// other options...
+				});
+				calendar.render();
+			});
+		</script>
+		<script src="js/jquery-3.3.1.min.js"></script>
+		<script src="js/jquery-migrate-3.0.1.min.js"></script>
+		<script src="js/jquery-ui.js"></script>
+		<script src="js/popper.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/owl.carousel.min.js"></script>
+		<script src="js/jquery.stellar.min.js"></script>
+		<script src="js/jquery.countdown.min.js"></script>
+		<script src="js/jquery.magnific-popup.min.js"></script>
+		<script src="js/bootstrap-datepicker.min.js"></script>
+		<script src="js/aos.js"></script>
+		<script src="js/main.js"></script>
+	</body>
+</html>

@@ -1,0 +1,144 @@
+{{#>admin}}
+      <div
+          id='main-content'
+          class='h-full p-10 w-full bg-gray-50 relative overflow-y-auto lg:ml-64'
+        >
+          <form method='POST' action='/admin/staff/store' enctype="multipart/form-data">
+            <div
+              class='p-4 border-t-2 border-indigo-400 rounded-lg bg-gray-100/5'
+            >
+              <div class='md:mx-0'>
+                <div class='flex justify-between w-full'>
+                  <div class='inline-flex items-center space-x-4'>
+                    <h1 class='text-gray-600'>Add Staff Member</h1>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class='space-y-6 bg-white'>
+              <div
+                class='items-center w-full p-4 space-y-4 text-gray-500 md:space-y-0'
+              >
+                <div class='max-w-sm mx-auto space-y-5'>
+                  <div>
+                    <div class='relative'>
+                      <input
+                        type='text'
+                        id='firstName'
+                        class='rounded-lg flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-[#EBBA4D] focus:border-transparent'
+                        placeholder='First name'
+                        name='firstName'
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <div class='relative'>
+                      <input
+                        type='text'
+                        id='lastName'
+                        class='rounded-lg flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-[#EBBA4D] focus:border-transparent'
+                        placeholder='Last name'
+                        name='lastName'
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <div class='relative'>
+                      <input
+                        type='date'
+                        id='dateOfBirth'
+                        class='rounded-lg flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-[#EBBA4D] focus:border-transparent'
+                        placeholder='Date of birth'
+                        name='dateOfBirth'
+                      />
+                    </div>
+                  </div>
+                  <div class='relative'>
+                    <select
+                      id='gender'
+                      name='gender'
+                      class='rounded-lg flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-[#EBBA4D] focus:border-transparent'
+                    >
+                      <option value='' disabled selected>Choose a Gender</option>
+                      <option value='male' label='Male'></option>
+                      <option value='female' label='Female'></option>
+                    </select>
+                  </div>
+                  <div>
+                    <div class='relative'>
+                      <input
+                        type='text'
+                        id='email'
+                        class='rounded-lg flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-[#EBBA4D] focus:border-transparent'
+                        placeholder='Email'
+                        name='email'
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <div class='relative'>
+                      <input
+                        type='text'
+                        id='phone'
+                        class='rounded-lg flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-[#EBBA4D] focus:border-transparent'
+                        placeholder='Phone Number'
+                        name='phone'
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <div class='relative'>
+                      <input
+                        type='text'
+                        id='address'
+                        class='rounded-lg flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-[#EBBA4D] focus:border-transparent'
+                        placeholder='Address'
+                        name='address'
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <div class='relative'>
+                      <input
+                        type='text'
+                        id='specialization'
+                        class='rounded-lg flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-[#EBBA4D] focus:border-transparent'
+                        placeholder='Specialization'
+                        name='specialization'
+                      />
+                    </div>
+                  </div>
+                  <div class="relative">
+                    <label class="text-gray-700" for="bio">
+                  <textarea
+                    class="flex-1 w-full py-2 pl-4 text-base text-gray-700 placeholder-gray-400 bg-white border border-gray-300 rounded-lg appearance-none focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+                    id="bio"
+                    placeholder="Bio"
+                    name="bio"
+                    rows="5"
+                    cols="40"></textarea>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <hr />
+
+              <input type="file" name="image" accept="image/*" />
+
+              <div
+                class='w-full flex gap-2 px-4 pb-4 ml-auto text-gray-500 md:w-1/3'
+              >
+                <button
+                  type='submit'
+                  class='py-2 px-4 bg-blue-600 hover:bg-blue-700 focus:ring-blue-500 focus:ring-offset-blue-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg'
+                >
+                  Save
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+{{/admin}}
+
+
+

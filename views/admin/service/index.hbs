@@ -1,0 +1,69 @@
+{{#>admin}}
+     <div
+      id="main-content"
+      class="h-full p-10 w-full bg-gray-50 relative overflow-y-auto lg:ml-64"
+    >
+      <div class="flex justify-between">
+        <span class="text-xl font-semibold">Services</span>
+        <button
+          type="submit"
+          class="text-sm bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline"
+        >
+          <a href="/admin/service/store"> Create </a>
+        </button>
+      </div>
+      <div class="w-full overflow-x-auto">
+        <table class="w-full">
+          <thead>
+          <tr
+            class="text-md font-semibold tracking-wide text-left text-gray-900 bg-gray-100 uppercase border-b border-gray-600"
+          >
+            <th class="px-4 py-3">Id</th>
+            <th class="px-4 py-3">Name</th>
+            <th class="px-4 py-3">Description</th>
+            <th class="px-4 py-3">Price</th>
+            <th class="px-4 py-3">Image</th>
+            <th class="px-4 py-3">Action</th>
+          </tr>
+          </thead>
+          <tbody class="bg-white">
+          {{#each viewData.services}}
+            <tr class="text-gray-700">
+              <td class="px-4 py-3 text-ms border">
+                <p class="font-semibold text-black">{{serviceID}}</p>
+              </td>
+              <td class="px-4 py-3 text-ms font-semibold border">{{serviceName}}</td>
+              <td class="px-4 py-3 text-ms font-semibold border">{{description}}</td>
+              <td class="px-4 py-3 text-ms border">
+                <p class="font-semibold text-black">{{price}}</p>
+              </td>
+              <td>
+                <img src="/uploads/{{image}}" alt="Image">
+              </td>
+              <td class="px-4 py-3 text-sm border">
+                <button
+                  type="button"
+                  class="mr-3 text-sm bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline"
+                >
+                  <a href="/admin/service/{{serviceID}}"> Edit </a></button>
+              </td>
+              <td>
+                <form action="/admin/service/{{serviceID}}" method="POST">
+                  <button
+                    type="submit"
+                    class="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline"
+                  >
+                    Delete
+                  </button>
+                </form>
+              </td>
+            </tr>
+          {{/each}}
+          </tbody>
+        </table>
+      </div>
+    </div>
+{{/admin}}
+
+
+

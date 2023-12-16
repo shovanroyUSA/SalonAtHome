@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Notification</title>
+    <style>
+        /* Add your custom styling here */
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+<h2>Booking Notification for {{serviceName}} on {{date}}</h2>
+
+<p>Dear {{clientName}},</p>
+
+<p>We want to inform you that your booking has been received successfully. Below are the details of your booking:</p>
+
+<ul>
+    <li><strong>Client Name:</strong> {{clientName}}</li>
+    <li><strong>Service:</strong> {{serviceName}}</li>
+    <li><strong>Staff Member:</strong> {{staffName}}</li>
+    <li><strong>Date:</strong> {{date}}</li>
+    <li><strong>Time:</strong> {{time}}</li>
+    <li><strong>Total Amount:</strong> {{totalAmount}}</li>
+    <li><strong>Status:</strong> {{status}}</li>
+    <li><strong>Notes:</strong> {{notes}}</li>
+</ul>
+
+<p>We will process your booking and keep you updated on its status. If you have any questions, feel free to contact us at {{adminMail}}.</p>
+
+<p>Thank you for choosing {{companyName}}!</p>
+
+<p>Best Regards,<br>
+    {{companyName}} Team<br>
+    {{adminMail}}</p>
+</body>
+</html>

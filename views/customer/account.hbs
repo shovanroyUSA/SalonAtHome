@@ -1,0 +1,153 @@
+{{#>client}}
+
+  <div class="container mx-auto mt-10 p-5">
+    <div class="flex flex-col items-center gap-5 sm:items-start sm:flex-row">
+      <!-- Profile Sidebar -->
+      <div class="flex flex-col md:w-1/4 gap-2 w-full">
+        <div class="w-full p-4 bg-gray-100 border">
+          <div class="flex flex-col items-center">
+            <img
+              src="https://via.placeholder.com/150"
+              alt="profile image"
+              class="rounded-full mb-4 w-[100px]"
+            />
+            <span class="text-gray-700 mb-4 italic">{{viewData.client.firstName}} {{viewData.client.lastName}}</span>
+          </div>
+        </div>
+        <div class="w-full p-4 bg-gray-100 border">
+          <div class="text-sm flex flex-col italic">
+            <a
+              href="#"
+              class="block font-medium text-gray-600 italic font-thin text-sm hover:text-[#EBBA4D]"
+            >My Bookings</a
+            >
+            <a
+              href="#"
+              class="block font-medium text-gray-600 italic font-thin text-sm hover:text-[#EBBA4D] mt-2"
+            >My Account</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Account Form -->
+      <div class="flex flex-col gap-5">
+        <div class="flex-1 p-4 bg-gray-100 border">
+          <div
+            class="flex flex-col sm:flex-row sm:justify-between items-start"
+          >
+            <div class="flex flex-col gap-0">
+              <h2 class="text-4xl font-[700] mb-1">
+                MY <br />
+                ACCOUNT
+              </h2>
+              <p
+                class="mb-4 font-medium text-gray-600 italic font-thin text-xs"
+              >
+                View and edit your personal info below.
+              </p>
+            </div>
+          </div>
+
+          <div class="border-b py-4 mb-4">
+            <h3 class="text-xl font-bold mb-2 italic">Account</h3>
+            <p
+              class="mb-4 font-medium text-gray-600 italic font-thin text-xs"
+            >
+              Update your personal information.
+            </p>
+            <div class="flex flex-col">
+              <label for="displayName" class="italic text-xs"
+              >Login Email
+              </label>
+              <span class="italic text-[10px]">
+                {{viewData.client.email}}
+              </span>
+            </div>
+            <div class="flex gap-5 sm:gap-20 mt-2">
+              <div class="mb-4">
+                <label for="firstName" class="italic text-xs"
+                >First Name *</label
+                >
+                <input
+                  type="text"
+                  id="firstName"
+                  class="mt-1 block w-full border-gray-300 p-2 pl-2 text-xs border bg-white"
+                  value={{viewData.client.firstName}}
+                />
+              </div>
+              <div class="mb-4">
+                <label for="lastName" class="italic text-xs">Last Name</label>
+                <input
+                  type="text"
+                  id="lastName"
+                  class="mt-1 block w-full border-gray-300 p-2 pl-2 text-xs border bg-white"
+                  value={{viewData.client.lastName}}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bookings section -->
+        <div class="flex-1 p-4 bg-gray-100 border">
+          <div
+            class="flex flex-col sm:flex-row sm:justify-between items-start"
+          >
+            <div class="flex flex-col gap-0">
+              <h2 class="text-4xl uppercase font-[700] mb-1">
+                Your <br />
+                bookings
+              </h2>
+              <p
+                class="mb-4 font-medium text-gray-600 italic font-thin text-xs"
+              >
+                View, reschedule or cancel your bookings and easily book
+                again.
+              </p>
+            </div>
+          </div>
+
+          <div class="w-full overflow-x-auto">
+            <table class="w-full">
+              <thead>
+              <tr
+                class="text-md font-semibold tracking-wide text-left text-gray-900 bg-gray-100 uppercase border-b border-gray-600"
+              >
+                <th class="px-4 py-3">Id</th>
+                <th class="px-4 py-3">Name</th>
+                <th class="px-4 py-3">Email</th>
+                <th class="px-4 py-3">Service</th>
+                <th class="px-4 py-3">Staff</th>
+                <th class="px-4 py-3">Date</th>
+                <th class="px-4 py-3">Time</th>
+                <th class="px-4 py-3">Notes</th>
+                <th class="px-4 py-3">Status</th>
+                <th class="px-4 py-3">Amount</th>
+              </tr>
+              </thead>
+              <tbody class="bg-white">
+              {{#each viewData.myBookings}}
+                <tr class="text-gray-700">
+                  <td class="px-4 py-3 text-ms font-semibold border">{{orderID}}</td>
+                  <td class="px-4 py-3 text-ms font-semibold border">{{client.firstName}}</td>
+                  <td class="px-4 py-3 text-ms font-semibold border">{{client.email}}</td>
+                  <td class="px-4 py-3 text-ms font-semibold border">{{service.serviceName}}</td>
+                  <td class="px-4 py-3 text-ms font-semibold border">{{staffMember.firstName}}</td>
+                  <td class="px-4 py-3 text-ms font-semibold border">{{date}}</td>
+                  <td class="px-4 py-3 text-ms font-semibold border">{{time}}</td>
+                  <td class="px-4 py-3 text-ms font-semibold border">{{notes}}</td>
+                  <td class="px-4 py-3 text-ms font-semibold border">{{status}}</td>
+                  <td class="px-4 py-3 text-ms border">
+                    <p class="font-semibold text-black">{{service.price}}</p>
+                </tr>
+              {{/each}}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{{/client}}

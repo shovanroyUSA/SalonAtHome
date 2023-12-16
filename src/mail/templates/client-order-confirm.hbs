@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Confirmation</title>
+    <style>
+        /* Add your custom styling here */
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+<h2>Booking Confirmation for {{serviceName}} on {{date}}</h2>
+
+<p>Dear {{clientName}},</p>
+
+<p>We hope this email finds you well. We are pleased to inform you that your booking has been successfully confirmed.
+    Below are the details of your upcoming appointment:</p>
+
+<ul>
+    <li><strong>Client Name:</strong> {{clientName}}</li>
+    <li><strong>Service:</strong> {{serviceName}}</li>
+    <li><strong>Staff Member:</strong> {{staffName}}</li>
+    <li><strong>Date:</strong> {{date}}</li>
+    <li><strong>Time:</strong> {{time}}</li>
+    <li><strong>Total Amount:</strong> {{totalAmount}}</li>
+    <li><strong>Status:</strong> {{status}}</li>
+    <li><strong>Notes:</strong> {{notes}}</li>
+</ul>
+
+<p>We look forward to providing you with our exceptional service on the scheduled date.</p>
+
+<p>Thank you for choosing Salon at Homes! We appreciate your business and can't wait to serve you.</p>
+
+<p>Best Regards,<br>
+    {{companyName}} Team<br>
+    {{adminMail}}</p>
+</body>
+</html>
